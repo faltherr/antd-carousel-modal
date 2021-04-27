@@ -7,6 +7,16 @@
   flex-direction: column;
 }
 
+.slide-container{
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.slide-container.active {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
 .slide-container > * {
   margin-bottom: 12px;
 }

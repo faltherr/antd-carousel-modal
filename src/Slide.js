@@ -8,7 +8,7 @@ const CarouselSlide = (props) => {
   }
   return (
     <div
-      className={`slide-container ${!releaseDetails.releaseImage ? 'no-image' : ''}`}
+      className={`slide-container ${!releaseDetails.releaseImage ? 'no-image' : ''} ${slideActive ? "active" : null}`}
     >
       {releaseDetails ? (
         <div
@@ -31,5 +31,6 @@ const CarouselSlide = (props) => {
       </div>
     </div>
   );
+};
 
 export default CarouselSlide;
