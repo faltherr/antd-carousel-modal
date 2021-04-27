@@ -4,16 +4,4 @@
   text-align: center;
 }
 
-.slide-container {
-  width: "100%";
-  height: "100%";
-  display: "grid";
-  grid-template-areas:
-    "imageContainer"
-    "slideTextContentContainer"
-    "closeModalButton";
-}
 
-.slide-container > * {
-  margin-bottom: 12px;
-}

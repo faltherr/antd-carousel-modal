@@ -22,6 +22,11 @@ const mySlides = [
     title: "Release 3",
     description: "3",
   },
+  {
+    releaseImage: null,
+    title: "Release 4",
+    description: "lorem ipsum",
+  },
 ];
 
 export default function Carousel(props) {
