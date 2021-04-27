@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Modal } from "antd";
 import Slide from "./Slide";
 import "./carousel.css";
+import { CSSTransition, SwitchTransition } from "react-transition-group";
 
 const mySlides = [
   {
@@ -44,7 +45,7 @@ export default function Carousel(props) {
           onClick={() => setCurrentSlide(i)}
           key={i}
           className={`slide-toggle-button ${
-            currentSlide === i ? "active" : ''
+            currentSlide === i ? "active" : ""
           }`}
         >
           <span></span>
@@ -52,7 +53,13 @@ export default function Carousel(props) {
       ))}
     >
       {mySlides.map((s, i) => (
-        <Slide releaseDetails={s} slideActive={currentSlide === i} />
+          <CSSTransition
+            in={currentSlide === i}
+            classNames="fade"
+            timeout={1000}
+          >
+            <Slide key={i} releaseDetails={s} slideActive={currentSlide === i} />
+          </CSSTransition>
       ))}
       <div className="modal-confirm-container">
         <Button onClick={() => handleCloseModal()}>Got It</Button>

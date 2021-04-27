@@ -1,14 +1,16 @@
 import React from "react";
+import { CSSTransition, SwitchTransition } from "react-transition-group";
 
 const CarouselSlide = (props) => {
   const { slideActive, releaseDetails } = props;
-  console.log("Slide rendered", slideActive);
   if (!slideActive) {
     return null;
   }
   return (
     <div
-      className={`slide-container ${!releaseDetails.releaseImage ? 'no-image' : ''} ${slideActive ? "active" : null}`}
+      className={`slide-container ${
+        !releaseDetails.releaseImage ? "no-image" : ""
+      } ${slideActive ? "active" : null}`}
     >
       {releaseDetails ? (
         <div
@@ -22,9 +24,7 @@ const CarouselSlide = (props) => {
         </div>
       ) : null}
       <div className="feature-all-text-container">
-        <div
-        className="feature-title-text-container"
-        >
+        <div className="feature-title-text-container">
           <h4>{releaseDetails.title}</h4>
         </div>
         <p>{releaseDetails.description}</p>
